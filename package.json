@@ -1,0 +1,17 @@
+{
+  "name": "pwa",
+  "private": true,
+  "version": "1.0.0",
+  "author": "jerry",
+  "description": "pwa description",
+  "dependencies": {
+    "cross-env": "^5.2.0",
+    "fs": "0.0.1-security",
+    "http": "0.0.0",
+    "path": "^0.12.7",
+    "url": "^0.11.0"
+  },
+  "scripts": {
+    "dev": "cross-env NODE_ENV=dev node ./bin/server.js"
+  }
+}
