@@ -15,6 +15,14 @@ nodejs: 6.11.1
 
 访问: `http://127.0.0.1:7008/index.html`
 
+#### 步骤
+1,在chrome扩展程序中添加web server for chrome
+
+2,chrome://apps中找到web server for chrome的扩展程序，并启动
+
+3，选择serve目录，创建端口
+
+4，
 
 
 * **相关资源**
