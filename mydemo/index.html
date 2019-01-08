@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><!--浏览器默认行为--优先使用 IE 最新版本和 Chrome-->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>pwa</title>
+	<link href="./css/index.css" rel="stylesheet" type="text/css">
+	<!--应用程序清单，包含添加主屏的图标名称，及启动动画-->
+	<link rel="manifest" href="./manifest.json">
+
+	<!-- Add to home screen for Safari on iOS -->
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="apple-mobile-web-app-title" content="jerry PWA">
+	<link rel="apple-touch-icon" href="./images/icons/icon-152x152.png">
+
+	<!--Windows 上的贴片图标-->
+	<meta name="msapplication-TileImage" content="images/icons/icon-144x144.png"><!-- Windows 8 磁贴图标 -->
+	<meta name="msapplication-TileColor" content="#2F3BA2"><!-- Windows 8 磁贴颜色 -->
+</head>
+<body>
+<header class="header-box">
+	<h1>Demo</h1>
+	<div class="nav-btn" id="nav-btn">
+		<i></i>
+		<i></i>
+	</div>
+</header>
+<div class="container">
+	<div class="card-last-updated" hidden></div>
+	<div id="data-box"></div>
+	<img src="./images/banner_01.jpg">
+	<img src="./images/banner_02.jpg">
+	<img src="./images/banner_02_one.jpg">
+	<img src="./images/banner_03.jpg">
+	<img src="./images/banner_04.jpg">
+
+</div>
+<footer class="footer-box">
+	this is footer
+</footer>
+</body>
+</html>
+<script src="./js/app.js"></script>
