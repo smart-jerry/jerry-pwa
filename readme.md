@@ -1,11 +1,14 @@
 
-* **安装**
+#### 安装
 推荐使用nvm 管理你的nodejs 版本，它支持你的系统配置多个版本的nodejs
 
 #### 环境依赖
 ```javascript
 nodejs: 6.11.1
 ```
+
+#### 依赖安装
+`npm install`
 
 #### 运行
 启动本地服务：`npm run dev`
