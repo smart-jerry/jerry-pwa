@@ -9,33 +9,33 @@ var path = require('path');
 
 var server = http.createServer(function (request, response) {
 	var pathname = url.parse(request.url).pathname;
-	console.log(pathname);
+//	console.log(pathname);
 	var realPath = path.join(DIR, pathname);
-	console.log(realPath);
+//	console.log(realPath);
 	//console.log(realPath);
 	var ext = path.extname(realPath);
 	ext = ext ? ext.slice(1) : 'unknown';
 	fs.exists(realPath, function (exists) {
 		if (!exists) {
 			response.writeHead(404, {
-				'Content-Type': 'text/plain'
+				'Content-Type' : 'text/plain'
 			});
-			response.write("This request URL " + pathname + " was not found on this server.1");
+			response.write('This request URL ' + pathname + ' was not found on this server.1');
 			response.end();
 		} else {
-			fs.readFile(realPath, "binary", function (err, file) {
+			fs.readFile(realPath, 'binary', function (err, file) {
 				if (err) {
 					response.writeHead(404, {
-						'Content-Type': 'text/plain'
+						'Content-Type' : 'text/plain'
 					});
-					response.write("This request URL " + pathname + " was not found on this server.2");
+					response.write('This request URL ' + pathname + ' was not found on this server.2');
 					response.end();
 				} else {
-					var contentType = mine[ext] || "text/plain";
+					var contentType = mine[ext] || 'text/plain';
 					response.writeHead(200, {
-						'Content-Type': contentType
+						'Content-Type' : contentType
 					});
-					response.write(file, "binary");
+					response.write(file, 'binary');
 					response.end();
 				}
 			});
@@ -43,4 +43,4 @@ var server = http.createServer(function (request, response) {
 	});
 });
 server.listen(PORT);
-console.log("Server runing at port: " + PORT + ".");
+console.log('Server runing at port: ' + PORT + '.');

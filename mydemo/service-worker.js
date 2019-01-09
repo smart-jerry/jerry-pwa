@@ -24,7 +24,7 @@ var filesToCache = [
 ];
 //当 service worker 被注册以后，当用户首次访问页面的时候一个 install 事件会被触发
 self.addEventListener('install', function(e) {
-	console.log('[ServiceWorker] Install');
+	console.log('[ServiceWorker] Install111');
 	e.waitUntil(
 		caches.open(cacheName).then(function(cache) {
 			console.log('[ServiceWorker] Caching app shell');
@@ -36,7 +36,7 @@ self.addEventListener('install', function(e) {
 
 //当 service worker 开始启动时，这将会发射activate事件。
 self.addEventListener('activate', function(e) {
-	console.log('[ServiceWorker] Activate');
+	console.log('[ServiceWorker] Activate888');
 	e.waitUntil(
 		caches.keys().then(function(keyList) {
 			return Promise.all(keyList.map(function(key) {
@@ -48,6 +48,13 @@ self.addEventListener('activate', function(e) {
 		})
 	);
 });
+
+// service worker激活
+self.addEventListener('active', function(e) {
+	console.log('Service Worker is active 11111.');
+});
+
+
 //从缓存中加载 app shell(缓存的文件)
 /*self.addEventListener('fetch', function(e) {
 	console.log('[ServiceWorker] Fetch', e.request.url);
@@ -58,10 +65,11 @@ self.addEventListener('activate', function(e) {
 	);
 });*/
 self.addEventListener('fetch', function(e) {
-	console.log('[ServiceWorker] Fetch', e.request.url);
+	console.log('[ServiceWorker] Fetch 2222', e.request.url);
 	//var dataUrl = 'http://192.168.3.33:2015';
 	var dataUrl="http://127.0.0.1:8887/mydemo/json";//请求服务端地址
-	if (e.request.url.indexOf(dataUrl) === 0) {
+//	console.log(dataUrl);
+	if (e.request.url.indexOf(dataUrl) === 0) {console.log(1);
 		// Put data handler code here
 		e.respondWith(
 			fetch(e.request)
@@ -73,7 +81,7 @@ self.addEventListener('fetch', function(e) {
 					});
 				})
 		);
-	} else {
+	} else {console.log(2);
 		e.respondWith(
 			caches.match(e.request).then(function(response) {
 				return response || fetch(e.request);
